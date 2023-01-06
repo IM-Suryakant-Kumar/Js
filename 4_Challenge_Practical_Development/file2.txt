@@ -1,0 +1,14 @@
+I     am  in                file2.txt
+
+
+
+Here      are    some       middle content
+
+
+
+
+
+
+Here are some                footer content
+
+
