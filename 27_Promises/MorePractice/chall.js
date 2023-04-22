@@ -18,7 +18,9 @@ const validateCart = () => {
 
 const proceedToPayment = (orderId) => {
   return new Promise((resolve, reject) => {
-    resolve("Payment successfull!");
+    setTimeout(() => {
+      resolve("Payment successfull!");
+    }, 1000)
   })
 }
 
