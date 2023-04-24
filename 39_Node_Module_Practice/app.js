@@ -46,7 +46,7 @@
 // // Making a noise, produce - signaling
 
 // Challenge ---------------------------------------
-// Raise: logging (data: message)
+// // Raise: logging (data: message)
 // const EventEmitter = require("events");
 // const emitter = new EventEmitter();
 
@@ -57,3 +57,17 @@
 
 // // Raise listener
 // emitter.emit("logging", { id: 2, message: "Raise logging!" });
+
+// --------------------------------------
+const EventEmitter = require("events");
+
+const Logger = require("./logger");
+const logger = new Logger();
+
+// Register a listener
+logger.on("messagedLogged", (arg) => {  // e, eventArg
+  console.log("Listener Called", arg);
+});
+
+logger.log("message");
+

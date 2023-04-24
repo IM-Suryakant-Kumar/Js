@@ -1,11 +1,18 @@
+const EventEmitter = require("events");
+
 var url = "http://mylogger.io/log";
 
-console.log(__filename);
-console.log(__dirname);
+class Logger extends EventEmitter {
 
-function log(message) {
-  // Send an HTTP request
-  console.log(message);
+
+
+  log(message) {
+    // Send an HTTP request
+    console.log(message);
+  
+    // Raise an event
+    this.emit("messagedLogged", { id: 1, url: "http://" });
+  }
 }
 
-module.exports = log;
+module.exports = Logger;
